@@ -1,1 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.js">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/editable/bootstrap-table-editable.js">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/export/bootstrap-table-export.js">
+<link href="https://rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.js">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css" >
+<link href="https://rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/css/bootstrap-editable.css" >
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/editable/bootstrap-table-editable.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/export/bootstrap-table-export.js"></script>
+<script src="//rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css" rel="stylesheet" />
+<link href="//rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet" />
+ </head>
+  <body>
+    <h1>Hello, world!</h1>
+
+
+<div class="container">
+<h1>Bootstrap Table</h1>
+
+<p>A table with third party integration  extension Filter control extension Data export</a> pour exporter</p>
+
+<div id="toolbar">
+		<select class="form-control">
+				<option value="">Export Basic</option>
+				<option value="all">Export All</option>
+				<option value="selected">Export Selected</option>
+		</select>
+</div>
+
+<table id="table" 
+			 data-toggle="table"
+			 data-search="true"
+			 data-filter-control="true" 
+			 data-show-export="true"
+			 data-click-to-select="true"
+			 data-toolbar="#toolbar"
+       class="table-responsive">
+	<thead>
+		<tr>
+			<th data-field="state" data-checkbox="true"></th>
+			<th data-field="prenom" data-filter-control="input" data-sortable="true">First Name</th>
+			<th data-field="date" data-filter-control="select" data-sortable="true">Date</th>
+			<th data-field="examen" data-filter-control="select" data-sortable="true">Examination</th>
+			<th data-field="note" data-sortable="true">Note</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
+			<td>Jitender</td>
+			<td>01/09/2015</td>
+			<td>Français</td>
+			<td>12/20</td>
+		</tr>
+		<tr>
+			<td class="bs-checkbox "><input data-index="1" name="btSelectItem" type="checkbox"></td>
+			<td>Jahid</td>
+			<td>05/09/2015</td>
+			<td>Philosophie</td>
+			<td>8/20</td>
+		</tr>
+		<tr>
+			<td class="bs-checkbox "><input data-index="2" name="btSelectItem" type="checkbox"></td>
+			<td>Valentin</td>
+			<td>05/09/2015</td>
+			<td>Philosophie</td>
+			<td>4/20</td>
+		</tr>
+		<tr>
+			<td class="bs-checkbox "><input data-index="3" name="btSelectItem" type="checkbox"></td>
+			<td>Milton</td>
+			<td>05/09/2015</td>
+			<td>Philosophie</td>
+			<td>10/20</td>
+		</tr>
+		<tr>
+			<td class="bs-checkbox "><input data-index="4" name="btSelectItem" type="checkbox"></td>
+			<td>Gonesh</td>
+			<td>01/09/2015</td>
+			<td>Français</td>
+			<td>14/20</td>
+		</tr>
+		<tr>
+			<td class="bs-checkbox "><input data-index="5" name="btSelectItem" type="checkbox"></td>
+			<td>Valérie</td>
+			<td>07/09/2015</td>
+			<td>Mathématiques</td>
+			<td>19/20</td>
+		</tr>
+		<tr>
+			<td class="bs-checkbox "><input data-index="6" name="btSelectItem" type="checkbox"></td>
+			<td>Valentin</td>
+			<td>01/09/2015</td>
+			<td>Français</td>
+			<td>11/20</td>
+		</tr>
+		<tr>
+			<td class="bs-checkbox "><input data-index="7" name="btSelectItem" type="checkbox"></td>
+			<td>Eric</td>
+			<td>01/10/2015</td>
+			<td>Philosophie</td>
+			<td>8/20</td>
+		</tr>
+		<tr>
+			<td class="bs-checkbox "><input data-index="8" name="btSelectItem" type="checkbox"></td>
+			<td>Valentin</td>
+			<td>07/09/2015</td>
+			<td>Mathématiques</td>
+			<td>14/20</td>
+		</tr>
+		<tr>
+			<td class="bs-checkbox "><input data-index="9" name="btSelectItem" type="checkbox"></td>
+			<td>Valérie</td>
+			<td>01/10/2015</td>
+			<td>Philosophie</td>
+			<td>12/20</td>
+		</tr>
+		<tr>
+			<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+			<td>Eric</td>
+			<td>07/09/2015</td>
+			<td>Mathématiques</td>
+			<td>14/20</td>
+		</tr>
+		<tr>
+		<td class="bs-checkbox "><input data-index="11" name="btSelectItem" type="checkbox"></td>
+			<td>Valentin</td>
+			<td>01/10/2015</td>
+			<td>Philosophie</td>
+			<td>10/20</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<script>
+//exporte les données sélectionnées
+var $table = $('#table');
+    $(function () {
+        $('#toolbar').find('select').change(function () {
+            $table.bootstrapTable('refreshOptions', {
+                exportDataType: $(this).val()
+            });
+        });
+    })
+
+		var trBoldBlue = $("table");
+
+	$(trBoldBlue).on("click", "tr", function (){
+			$(this).toggleClass("bold-blue");
+	});
+
+</script>
+
+
+
+
+
+
+
+	
+<div class="container">
+<h1>Bootstrap Table</h1>
+
+<p>A table with third party integration  extension Filter control extension Data export</a> pour exporter</p>
+
+<div id="toolbar2">
+		<select class="form-control">
+				<option value="">Export Basic</option>
+				<option value="all">Export All</option>
+				<option value="selected">Export Selected</option>
+		</select>
+</div>
+
+		<table id="table2" 
+			 data-toggle="table"
+			 data-search="true"
+			 data-filter-control="true" 
+			 data-show-export="true"
+			 data-click-to-select="true"
+			 data-toolbar="#toolbar2"
+                          class="table-responsive">
+			<thead>
+		<tr>
+			<th data-field="ste" data-checkbox="true"></th>
+			<th data-field="penom" data-filter-control="input" data-sortable="true">Mobile</th>
+			<th data-field="dae" data-filter-control="select" data-sortable="true">Category</th>
+			<th data-field="exmen" data-filter-control="select" data-sortable="true">Announced</th>
+			<th data-field="nte" data-sortable="true">Note</th>
+		        
+
+
+</tr>
+	</thead>
+			<tbody>
+				
+							<tr>
+                                                                <td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
+								<td> Redminote 10s </td>
+                                                                <td class="">Category</td>
+								<td class="">Mid-range</td>
+
+								<td class="">Announced</td>
+								
+							
+						
+							
+								
+							  </tr>
+						
+		
+		
+			
+				
+							<tr>    <td class="bs-checkbox "><input data-index="1" name="btSelectItem" type="checkbox"></td>
+								<td class="">Chipset</td>
+								<td class="">Mediatek Helio G95</td>
+							
+						
+							
+								<td class="">Max. clock</td>
+								<td class="">2050 MHz</td>
+							        
+						</tr>
+                                            <tr>    <td class="bs-checkbox "><input data-index="2" name="btSelectItem" type="checkbox"></td>
+							
+								<td class="">CPU cores</td>
+								<td class="">8 (2 + 6)</td>
+							
+					
+							
+								<td class="">Architecture</td>
+								<td class="">- 6 cores at 2 GHz: Cortex-A55<br>- 2 cores at 2.05 GHz: Cortex-A76</td>
+							
+						
+							
+								
+			
+							</tr>
+						
+			</tbody>
+		</table>
+	</div>
+		
+  
+  
+  <script>
+//exporte les données sélectionnées
+var $table = $('#table2');
+    $(function () {
+        $('#toolbar2').find('select').change(function () {
+            $table.bootstrapTable('refreshOptions', {
+                exportDataType: $(this).val()
+            });
+        });
+    })
+
+		var trBoldBlue2 = $("table");
+
+	$(trBoldBlue).on("click", "tr", function (){
+			$(this).toggleClass("bold-blue");
+	});
+</script>
+  
+  
+  
+
+
+
+
+
+
+
+
+  </body>
+</html>
 
