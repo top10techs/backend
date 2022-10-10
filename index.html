@@ -291,6 +291,115 @@ var $table = $('#table2');
 
 
 
+	
+<div class="container">
+<h1>Bootstrap Table</h1>
+
+<p>A table with third party integration  extension Filter control extension Data export</a> pour exporter</p>
+
+<div id="toolbar3">
+		<select class="form-control">
+				<option value="">Export Basic</option>
+				<option value="all">Export All</option>
+				<option value="selected">Export Selected</option>
+		</select>
+</div>
+
+		<table id="table3" 
+			 data-toggle="table"
+			 data-search="true"
+			 data-filter-control="true" 
+			 data-show-export="true"
+			 data-click-to-select="true"
+			 data-toolbar="#toolbar3"
+                          class="table-responsive">
+			<thead>
+		<tr>
+			<th data-field="se" data-checkbox="true"></th>
+			<th data-field="pnom" data-filter-control="input" data-sortable="true">Mobile</th>
+			<th data-field="ae" data-filter-control="select" data-sortable="true">Category</th>
+			<th data-field="emen" data-filter-control="select" data-sortable="true">Announced</th>
+			<th data-field="te" data-sortable="true">Note</th>
+		        
+
+
+</tr>
+	</thead>
+			<tbody>
+				
+							<tr>
+                                                                <td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
+								<td> Redminote 10s </td>
+                                                                <td class="">Category</td>
+						 		<td class="">Mid-range</td>
+                                                                 <td class="non">abcd</td>
+       
+								<td class="">Announced</td>
+								
+							
+						
+							
+								
+							  </tr>
+						
+		
+		
+			
+				
+							<tr>    <td class="bs-checkbox "><input data-index="1" name="btSelectItem" type="checkbox"></td>
+								<td class="">Chipset</td>
+								<td class="">Mediatek Helio G95</td>
+							
+						
+							
+								<td class="">Max. clock</td>
+								<td class="">2050 MHz</td>
+							        
+						</tr>
+                                            <tr>    <td class="bs-checkbox "><input data-index="2" name="btSelectItem" type="checkbox"></td>
+							
+								<td class="">CPU cores</td>
+								<td class="">8 (2 + 6)</td>
+							
+					
+							
+								<td class="">Architecture</td>
+								<td class="">- 6 cores at 2 GHz: Cortex-A55<br>- 2 cores at 2.05 GHz: Cortex-A76</td>
+							
+						
+							
+								
+			
+							</tr>
+						
+			</tbody>
+		</table>
+	</div>
+		
+  <script>$('.non').remove();</script>
+  
+  <script>
+//exporte les données sélectionnées
+var $table = $('#table3');
+    $(function () {
+        $('#toolbar3').find('select').change(function () {
+            $table.bootstrapTable('refreshOptions', {
+                exportDataType: $(this).val()
+            });
+        });
+    })
+
+		var trBoldBlue2 = $("table");
+
+	$(trBoldBlue).on("click", "tr", function (){
+			$(this).toggleClass("bold-blue");
+	});
+</script>
+  
+
+
+
+
 
 
 
