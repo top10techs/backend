@@ -37,7 +37,7 @@
 
 <div class="container">
 
-<div id="main" 
+<div id="div" 
 			 data-toggle="main"
 			 data-search="true"
 			 data-filter-control="true" 
@@ -45,7 +45,7 @@
 			 data-click-to-select="true"
 			 data-toolbar="#toolbar0"
        class="">
-<p  data-field="de" data-filter-control="select" data-sortable="true">Data 1</p>
+<p  data-field="dioo" data-filter-control="select" data-sortable="true">Data 1</p>
 <p  data-field="aru0" data-filter-control="select" data-sortable="true">Data 2</p>
 <div> <p class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></p>
 <p> Red 1</p><p> Red 2 </p></div>
@@ -55,7 +55,7 @@
 
 <script>
 //exporte les données sélectionnées
-var $div = $('#main');
+var $div = $('#div');
     $(function () {
         $('#toolbar0').find('select').change(function () {
             $div.bootstrapTable('refreshOptions', {
@@ -66,7 +66,7 @@ var $div = $('#main');
 
 		var trBoldBlue = $("div");
 
-	$(trBoldBlue).on("click", "p", function (){
+	$(trBoldBlue).on("click", "div", function (){
 			$(this).toggleClass("bold-blue");
 	});
 
@@ -205,7 +205,7 @@ var $table = $('#table');
 
 		var trBoldBlue = $("table");
 
-	$(trBoldBlue).on("click", "tr", function (){
+	$(trBoldBlue).on("click", "td", function (){
 			$(this).toggleClass("bold-blue");
 	});
 
