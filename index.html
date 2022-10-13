@@ -36,6 +36,44 @@
 
 
 <div class="container">
+
+<div id="main" 
+			 data-toggle="main"
+			 data-search="true"
+			 data-filter-control="true" 
+			 data-show-export="true"
+			 data-click-to-select="true"
+			 data-toolbar="#toolbar0"
+       class="">
+<p  data-field="de" data-filter-control="select" data-sortable="true">Data 1</p>
+<p  data-field="aru0" data-filter-control="select" data-sortable="true">Data 2</p>
+<div> <p class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></p>
+<p> Red 1</p><p> Red 2 </p></div>
+<div> <p class="bs-checkbox "><input data-index="1" name="btSelectItem" type="checkbox"></p>
+<p> Pink 1</p><Pink 2</p></div>
+</div>
+
+<script>
+//exporte les données sélectionnées
+var $div = $('#main');
+    $(function () {
+        $('#toolbar0').find('select').change(function () {
+            $div.bootstrapTable('refreshOptions', {
+                exportDataType: $(this).val()
+            });
+        });
+    })
+
+		var trBoldBlue = $("div");
+
+	$(trBoldBlue).on("click", "p", function (){
+			$(this).toggleClass("bold-blue");
+	});
+
+</script>
+
+
+
 <h1>Bootstrap Table</h1>
 
 <p>A table with third party integration  extension Filter control extension Data export</a> pour exporter</p>
