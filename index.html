@@ -249,17 +249,21 @@ var $table = $('#table');
 	</thead>
 			<tbody>
 				
-							<tr>
+							<tr id="tr1">
                                                                 <td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
-								<td> Redminote 10s </td>
-                                                               <?php include "redminote10s.html" ?>
+								<t
+                                          
 
 
 						 		<td class="">Mid-range</td>
                                                                  
        
-								<td class="">Announced</td>
-								
+							
+					<script type="text/javascript">
+$(document).ready(function(e) {
+    $('#tr1').load('redminote10s.html',function(){alert('loaded')});
+});
+</script>
 							
 						
 							
