@@ -219,18 +219,9 @@ var $table = $('#table');
 	</thead>
 			<tbody>
 				
-							<tr class="tr1">   <td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
+							<tr class="ttt">   <td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
   
-<script>                                                           
-const nav = document.querySelector('.tr1')								
-fetch('/redminote10s.html')
-.then(res=>res.text())
-.then(data=>{
-    nav.innerHTML=data
-    const parser = new DOMParser()
-    const doc = parser.parseFromString(data, 'text/html')
-    eval(doc.querySelector('script').textContent)
-})</script>
+
                                           
 
 
@@ -2887,7 +2878,16 @@ var $table = $('#table3');
   
 
 
-
+<script>                                                           
+const nav = document.querySelector('.ttt')								
+fetch('/redminote10s.html')
+.then(res=>res.text())
+.then(data=>{
+    nav.innerHTML=data
+    const parser = new DOMParser()
+    const doc = parser.parseFromString(data, 'text/html')
+    eval(doc.querySelector('script').textContent)
+})</script>
 
 
 
