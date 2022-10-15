@@ -37,40 +37,36 @@
 
 <div class="container">
 
-<div id="div" 
-			 data-toggle="main"
-			 data-search="true"
-			 data-filter-control="true" 
-			 data-show-export="true"
-			 data-click-to-select="true"
-			 data-toolbar="#toolbar0"
-       class="">
-<p  data-field="dioo" data-filter-control="select" data-sortable="true">Data 1</p>
-<p  data-field="aru0" data-filter-control="select" data-sortable="true">Data 2</p>
-<div> <p class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></p>
-<p> Red 1</p><p> Red 2 </p></div>
-<div> <p class="bs-checkbox "><input data-index="1" name="btSelectItem" type="checkbox"></p>
-<p> Pink 1</p><p>Pink 2</p></div>
-</div>
-
 <script>
-//exporte les données sélectionnées
-var $div = $('#div');
-    $(function () {
-        $('#toolbar0').find('select').change(function () {
-            $div.bootstrapTable('refreshOptions', {
-                exportDataType: $(this).val()
-            });
-        });
-    })
-
-		var trBoldBlue = $("div");
-
-	$(trBoldBlue).on("click", "div", function (){
-			$(this).toggleClass("bold-blue");
-	});
-
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
 </script>
+
 
 
 
@@ -256,7 +252,11 @@ var $table = $('#table');
 							<tr>
                                                                 <td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
 								<td> Redminote 10s </td>
-                                                                <object data="redminote10s.html"></object>
+                                                                
+<td w3-include-html="redminote10s.html"></td> 
+<script>
+includeHTML();
+</script>
 						 		<td class="">Mid-range</td>
                                                                  
        
