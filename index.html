@@ -83,13 +83,12 @@
     </div>
     <div class="row pt-3">
       <div class="col-md-12 col-sm-12 col-12 p-2 ">
-        <table id="tblData" class="table table-bordered table-hover table-striped"  data-toggle="table"
+        <table id="tblData" class="table table-bordered table-hover table-striped table-responsive"  data-toggle="table"
 			 data-search="true"
 			 data-filter-control="true" 
 			 data-show-export="true"
 			 data-click-to-select="true"
-			 data-toolbar="#toolbar"
-       class="table-responsive">
+			 data-toolbar="#toolbar">
           <thead>
             <tr><th>Sr no</th>
 
@@ -109,23 +108,7 @@
       </div>
     </div>
   </div>
-<script>
-//exporte les données sélectionnées
-var $table = $('#tblData');
-    $(function () {
-        $('#toolbar3').find('select').change(function () {
-            $table.bootstrapTable('refreshOptions', {
-                exportDataType: $(this).val()
-            });
-        });
-    })
 
-		var trBoldBlue3= $("table");
-
-	$(trBoldBlue3).on("click", "tr", function (){
-			$(this).toggleClass("bold-blue");
-	});
-</script>
   
 
   <script>
@@ -272,6 +255,25 @@ var $table = $('#tblData');
     }
 
   </script>
+
+
+<script>
+//exporte les données sélectionnées
+var $table = $('#tblData');
+    $(function () {
+        $('#toolbar3').find('select').change(function () {
+            $table.bootstrapTable('refreshOptions', {
+                exportDataType: $(this).val()
+            });
+        });
+    })
+
+		var trBoldBlue3= $("table");
+
+	$(trBoldBlue3).on("click", "tr", function (){
+			$(this).toggleClass("bold-blue");
+	});
+</script>
 </body>
 
 </html>
