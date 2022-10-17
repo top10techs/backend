@@ -287,9 +287,11 @@ var $table = $('#tblData');
 			$(this).toggleClass("bold-blue");
 	});
 </script>
-<p id="demo"></p>
+<p id="demo"></p><br><p id="demo2"></p>
 <script>var u =window.localStorage.getItem('localData') ;
-document.getElementById("demo").innerHTML=u
+document.getElementById("demo").innerHTML=u;
+var b = document.getElementById('1').value;
+document.getElementById("demo2").innerHTML=b;
 </script>
 </body>
 
