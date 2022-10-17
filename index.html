@@ -42,24 +42,6 @@
       height: 20px;
     }
   </style>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-
-<link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
-
-
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/editable/bootstrap-table-editable.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/export/bootstrap-table-export.js"></script>
-<script src="//rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.js"></script>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-<link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css" rel="stylesheet" />
-<link href="//rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet" />
-
 </head> 
 <body>
   <div class="container">
@@ -70,13 +52,13 @@
     <div class="form-row">
       <div class="col-md-3">
         <label>Name <span class="errdiv"> *</span></label>
-        <input id="txtName" type="text" class="form-control txt txtName" placeholder="Enter Name">
+        <input id="txtName" type="text" class="form-control txt txtName" placeholder="Enter Name" required>
         <input id="txtId" type="hidden" class="form-control txt">
       </div>
       <div class="col-md-3 col-sm-6 col-6">
         <label>Contact No <span class="errdiv"> *</span></label>
         <input id="txtContact" data-type="number" type="text" minlength="10" maxlength="10"
-          class="form-control txt txtContact" placeholder="Contact No">
+          class="form-control txt txtContact" placeholder="Contact No" required>
       </div>
       <div class="col-md-3 col-sm-6 col-6">
         <label>Alt Contact No</label>
@@ -88,7 +70,7 @@
       <div class="col-md-6 col-sm-7">
         <label>Address <span class="errdiv"> *</span></label>
         <textarea id="txtAddress" class="form-control txt txtAddress" rows="3" minlength="15"
-          placeholder="Enter Address"></textarea>
+          placeholder="Enter Address" required></textarea>
       </div>
     </div>
     <div class="row pt-2">
@@ -101,142 +83,25 @@
     </div>
     <div class="row pt-3">
       <div class="col-md-12 col-sm-12 col-12 p-2 ">
-        <table id="tblData" class="table table-bordered table-hover table-striped table-responsive" >
+        <table id="tblData" class="table table-bordered table-hover table-striped">
           <thead>
-            <tr><th>Sr no</th>
-
-              <th data-field="1" data-filter-control="select" data-sortable="true">Name</th>
-        <th data-field="1a" data-filter-control="select" data-sortable="true">Category</th>
-        <th data-field="1b" data-filter-control="select" data-sortable="true">Announced</th>
-        <th data-field="1c" data-filter-control="select" data-sortable="true">Release date</th>
-        <th data-field="2" data-filter-control="select" data-sortable="true">Type</th>
-        <th data-field="3" data-filter-control="select" data-sortable="true">Size</th>
-        <th data-field="4" data-filter-control="select" data-sortable="true">Resolution</th>
-        <th data-field="5" data-filter-control="select" data-sortable="true">Aspect ratio</th>
-        <th data-field="6" data-filter-control="select" data-sortable="true">PPi</th>
-        <th data-field="7" data-filter-control="select" data-sortable="true">Refresh rate</th>
-        <th data-field="8" data-filter-control="select" data-sortable="true">Max rated brightness</th>
-        <th data-field="9" data-filter-control="select" data-sortable="true">Max brightness in HDR</th>
-        <th data-field="10" data-filter-control="select" data-sortable="true">HDR support</th>
-        <th data-field="11" data-filter-control="select" data-sortable="true">Screen protection</th>
-        <th data-field="12" data-filter-control="select" data-sortable="true">Screen to body ratio</th>
-        <th data-field="13" data-filter-control="select" data-sortable="true">Display features</th>
-        <th data-field="14" data-filter-control="select" data-sortable="true">RGB color space</th>
-        <th data-field="15" data-filter-control="select" data-sortable="true">PWM</th>
-        <th data-field="16" data-filter-control="select" data-sortable="true">Response time</th>
-        <th data-field="17" data-filter-control="select" data-sortable="true">Contrast</th>
-        <th data-field="18" data-filter-control="select" data-sortable="true">Height</th>
-        <th data-field="19" data-filter-control="select" data-sortable="true">Width</th>
-        <th data-field="20" data-filter-control="select" data-sortable="true">Thickness</th>
-        <th data-field="20a" data-filter-control="select" data-sortable="true">Weight</th>
-        <th data-field="21" data-filter-control="select" data-sortable="true">Waterproof</th>
-        <th data-field="22" data-filter-control="select" data-sortable="true">Rear material</th>
-        <th data-field="23" data-filter-control="select" data-sortable="true">Frame material</th>
-        <th data-field="24" data-filter-control="select" data-sortable="true">Colors</th>
-        <th data-field="25" data-filter-control="select" data-sortable="true">Fingerprint scanner</th>
-        <th data-field="26" data-filter-control="select" data-sortable="true">Chipset</th>
-        <th data-field="27" data-filter-control="select" data-sortable="true">Max clock</th>
-        <th data-field="28" data-filter-control="select" data-sortable="true">Cpu cores</th>
-        <th data-field="29" data-filter-control="select" data-sortable="true">Architecture</th>
-        <th data-field="30" data-filter-control="select" data-sortable="true">Lithography process</th>
-        <th data-field="31" data-filter-control="select" data-sortable="true">Graphics</th>
-        <th data-field="32" data-filter-control="select" data-sortable="true">GPU clock</th>
-        <th data-field="33" data-filter-control="select" data-sortable="true">FLOPS</th>
-        <th data-field="34" data-filter-control="select" data-sortable="true">RAM size</th>
-        <th data-field="35" data-filter-control="select" data-sortable="true">Memory type</th>
-        <th data-field="36" data-filter-control="select" data-sortable="true">Memory clock</th>
-        <th data-field="37" data-filter-control="select" data-sortable="true">Channels</th>
-        <th data-field="38" data-filter-control="select" data-sortable="true">Storage size</th>
-        <th data-field="39" data-filter-control="select" data-sortable="true">Storage type</th>
-        <th data-field="40" data-filter-control="select" data-sortable="true">Memory card</th>
-        <th data-field="41" data-filter-control="select" data-sortable="true">Memory card max size</th>
-        <th data-field="42" data-filter-control="select" data-sortable="true">CPU Antutu</th>
-        <th data-field="43" data-filter-control="select" data-sortable="true">GPU Antutu</th>
-        <th data-field="44" data-filter-control="select" data-sortable="true">Memory Antutu</th>
-        <th data-field="45" data-filter-control="select" data-sortable="true">UX Antutu</th>
-        <th data-field="45a" data-filter-control="select" data-sortable="true">Total antutu</th>
-<th data-field="45b" data-filter-control="select" data-sortable="true">Stability</th>
-<th data-field="45c" data-filter-control="select" data-sortable="true">Graphics test</th>
-<th data-field="45d" data-filter-control="select" data-sortable="true">Graphics score</th>
-<th data-field="45e" data-filter-control="select" data-sortable="true">PC Mark 3.0 score</th>
-        <th data-field="46" data-filter-control="select" data-sortable="true">Operating system</th>
-        <th data-field="47" data-filter-control="select" data-sortable="true">ROM</th>
-        <th data-field="48" data-filter-control="select" data-sortable="true">OS size</th>
-        <th data-field="49" data-filter-control="select" data-sortable="true">Battery Capacity</th>
-        <th data-field="50" data-filter-control="select" data-sortable="true">Charge power</th>
-        <th data-field="51" data-filter-control="select" data-sortable="true">Battery type</th>
-        <th data-field="52" data-filter-control="select" data-sortable="true">Replaceable</th>
-        <th data-field="53" data-filter-control="select" data-sortable="true">Wireless charging</th>
-        <th data-field="54" data-filter-control="select" data-sortable="true">Reverse charging</th>
-        <th data-field="55" data-filter-control="select" data-sortable="true">Fast charging</th>
-        <th data-field="56" data-filter-control="select" data-sortable="true">Full charging time</th>
-        <th data-field="57" data-filter-control="select" data-sortable="true">Camera Matrix</th>
-        <th data-field="58" data-filter-control="select" data-sortable="true">Image resolution (back)</th>
-        <th data-field="59" data-filter-control="select" data-sortable="true">Zoom</th>
-        <th data-field="60" data-filter-control="select" data-sortable="true">Flash</th>
-        <th data-field="61" data-filter-control="select" data-sortable="true">Stabilization</th>
-        <th data-field="62" data-filter-control="select" data-sortable="true">8k video recording</th>
-        <th data-field="63" data-filter-control="select" data-sortable="true">4K video recording</th>
-        <th data-field="64" data-filter-control="select" data-sortable="true">1080p video recording</th>
-        <th data-field="65" data-filter-control="select" data-sortable="true">Slow motion</th>
-        <th data-field="66" data-filter-control="select" data-sortable="true">Angle of widest lens</th>
-        <th data-field="67" data-filter-control="select" data-sortable="true">Lenses</th>
-        <th data-field="68" data-filter-control="select" data-sortable="true">Wide (main) Lens</th>
-        <th data-field="69" data-filter-control="select" data-sortable="true">Ultra wide Lens</th>
-        <th data-field="70" data-filter-control="select" data-sortable="true">Macro Lens</th>
-        <th data-field="71" data-filter-control="select" data-sortable="true">Depth Lens</th>
-        <th data-field="72" data-filter-control="select" data-sortable="true">Camera features</th>
-        <th data-field="73" data-filter-control="select" data-sortable="true">Selfie(MP)</th>
-        <th data-field="74" data-filter-control="select" data-sortable="true">Image resolution</th>
-        <th data-field="75" data-filter-control="select" data-sortable="true">Aperture</th>
-        <th data-field="76" data-filter-control="select" data-sortable="true">Pixel size</th>
-<th data-field="76a" data-filter-control="select" data-sortable="true">Sensor type</th>
-        <th data-field="77" data-filter-control="select" data-sortable="true">Sensor size</th>
-        <th data-field="78" data-filter-control="select" data-sortable="true">Video resolution (front)</th>
-        <th data-field="79" data-filter-control="select" data-sortable="true">Wi-fi standard</th>
-        <th data-field="80" data-filter-control="select" data-sortable="true">Wi-fi features</th>
-        <th data-field="81" data-filter-control="select" data-sortable="true">Bluetooth versions</th>
-        <th data-field="82" data-filter-control="select" data-sortable="true">Bluetooth features</th>
-        <th data-field="83" data-filter-control="select" data-sortable="true">USB type</th>
-        <th data-field="84" data-filter-control="select" data-sortable="true">USb version</th>
-        <th data-field="85" data-filter-control="select" data-sortable="true">USB features</th>
-        <th data-field="86" data-filter-control="select" data-sortable="true">GPS</th>
-        <th data-field="87" data-filter-control="select" data-sortable="true">NFC</th>
-        <th data-field="88" data-filter-control="select" data-sortable="true">Infrared port</th>
-        <th data-field="89" data-filter-control="select" data-sortable="true">No of SIM</th>
-        <th data-field="90" data-filter-control="select" data-sortable="true">Type of sim card</th>
-        <th data-field="91" data-filter-control="select" data-sortable="true">Multi Sim mode</th>
-        <th data-field="92" data-filter-control="select" data-sortable="true">eSIM support</th>
-        <th data-field="93" data-filter-control="select" data-sortable="true">Hybrid support</th>
-        <th data-field="94" data-filter-control="select" data-sortable="true">Lte Cat</th>
-        <th data-field="95" data-filter-control="select" data-sortable="true">2G network</th>
-        <th data-field="96" data-filter-control="select" data-sortable="true">3G networks</th>
-        <th data-field="97" data-filter-control="select" data-sortable="true">4G networks</th>
-        <th data-field="98" data-filter-control="select" data-sortable="true">5G</th>
-        <th data-field="99" data-filter-control="select" data-sortable="true">Speaker</th>
-        <th data-field="100" data-filter-control="select" data-sortable="true">Headphone audio jack</th>
-        <th data-field="101" data-filter-control="select" data-sortable="true">FM radio</th>
-        <th data-field="102" data-filter-control="select" data-sortable="true">Dolby Atmos</th>
-        <th data-field="103" data-filter-control="select" data-sortable="true">Category</th>
-        <th data-field="104" data-filter-control="select" data-sortable="true">Announced</th>
-        <th data-field="105" data-filter-control="select" data-sortable="true">Release date</th>
-        <th data-field="106" data-filter-control="select" data-sortable="true">Sensors</th>
-        <th data-field="107" data-filter-control="select" data-sortable="true">Box</th>
-0
+            <tr>
+              <th>Sr No</th>
+              <th> Name</th>
+              <th>Phone</th>
+              <th>Alt Phone</th>
+              <th>Address</th>
+              <th class="text-center">Action</th>
             </tr>
           </thead>
           <tbody> 
-
           </tbody>
         </table>
       </div>
     </div>
   </div>
-
-  
-
   <script>
-   var emptyRow = "<tr><td colspan='6' class='text-center'> No Records Available</td></tr>";
+    var emptyRow = "<tr><td colspan='6' class='text-center'> No Records Available</td></tr>";
     $(document).ready(function () {
       loadDataFromLocal();
       $('#tblData').on('click', '.btn-edit', function () {
@@ -245,18 +110,18 @@
         const contact = $(this).parent().parent().find(".txtContact").html();
         const altContact = $(this).parent().parent().find(".txtAltNo").html();
         const address = $(this).parent().parent().find(".txtAddress").html();
-        const id = $(this).parent().parent().find(".txtName").attr("id");
+        const id = $(this).parent().parent().find(".txtName").attr("data-id");
         $("#txtName").val(name);
         $("#txtContact").val(contact);
         $("#txtAltNo").val(altContact);
         $("#txtAddress").val(address);
-        $("#txtId").val("id");
+        $("#txtId").val(id);
         $("#btnSave").text("Update");
       });
 
       $('#tblData').on('click', '.btn-delete', function () {
         debugger;
-        const id = $(this).parent().parent().find(".txtName").attr("id");
+        const id = $(this).parent().parent().find(".txtName").attr("data-id");
         deleteDataFromLocal(id);
       });
 
@@ -301,7 +166,7 @@
         localArray.forEach(element => {
           let dynamicTR = "<tr>";
           dynamicTR = dynamicTR + "<td> " + index + "</td>";
-          dynamicTR = dynamicTR + "<td class='txtName'  id=" + element.id + ">" + element.name + "</td>";
+          dynamicTR = dynamicTR + "<td class='txtName'  data-id=" + element.id + ">" + element.name + "</td>";
           dynamicTR = dynamicTR + "<td class='txtContact'>" + element.contact + "</td>";
           dynamicTR = dynamicTR + "<td class='txtAltNo'>" + element.altContact + "</td>";
           dynamicTR = dynamicTR + "<td class='txtAddress'>" + element.address + "</td>";
@@ -379,69 +244,6 @@
     }
 
   </script>
-
-<!--
-<script>
-//exporte les données sélectionnées
-var $table = $('#');
-    $(function () {
-        $('#toolbar3').find('select').change(function () {
-            $table.bootstrapTable('refreshOptions', {
-                exportDataType: $(this).val()
-            });
-        });
-    })
-
-		var trBoldBlue3= $("table");
-
-	$(trBoldBlue3).on("click", , function (){
-			$(this).toggleClass("bold-blue");
-	});
-</script>-->
-<script>var oTable = $('#tblData').DataTable({
-		fixedHeader: {
-				header:false,
-				footer:false
-			},
-        pagingType: "full_numbers",
-        bSort: true,
-		"order": [[ 0, "asc" ]],
-		"lengthMenu": [[25, 50, 100, -1], [25, 50, 100, "All"]],
-        initComplete: function () {
-            this.api().columns().every( function () {
-                var column = this;
-                var select = $('<select style="width:100px;"><option value=""></option></select>')
-                    .appendTo( $(column.header()).find('span').empty() )
-                    .on({ 'change': function () {
-                        var val = $.fn.dataTable.util.escapeRegex(
-                            $(this).val()
-                        );
- 
-                        column
-                            .search( val ? '^'+val+'$' : '', true, false )
-                            .draw();
-                    },
-                    'click': function(e) {
-                      // stop click event bubbling
-                      e.stopPropagation();
-                    }
-                    } );
- 
-                column.data().unique().sort().each( function ( d, j ) {
-                    select.append( '<option value="'+d+'">'+d+'</option>' )
-                } );
-            } );
-        }
-	
-	 });
-</script>
-<p id="demo"></p><br><p id="demo2"></p>
-<script>var u =JSON.parse(localStorage.getItem('localData')) ;
-document.getElementById("demo").innerHTML=u;
-var v = document.getElementById("1").innerText;
-document.getElementById("demo2").innerHTML=v;
-document.getElementById("1").style.color = "blue";
-</script>
 </body>
 
 </html>
