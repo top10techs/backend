@@ -134,7 +134,7 @@
         const contact = $(this).parent().parent().find(".txtContact").html();
         const altContact = $(this).parent().parent().find(".txtAltNo").html();
         const address = $(this).parent().parent().find(".txtAddress").html();
-        const id = $(this).parent().parent().find(".txtName").attr("data-id");
+        const id = $(this).parent().parent().find(".txtName").attr("id");
         $("#txtName").val(name);
         $("#txtContact").val(contact);
         $("#txtAltNo").val(altContact);
@@ -145,7 +145,7 @@
 
       $('#tblData').on('click', '.btn-delete', function () {
         debugger;
-        const id = $(this).parent().parent().find(".txtName").attr("data-id");
+        const id = $(this).parent().parent().find(".txtName").attr("id");
         deleteDataFromLocal(id);
       });
 
@@ -190,7 +190,7 @@
         localArray.forEach(element => {
           let dynamicTR = "<tr>";
           dynamicTR = dynamicTR + "<td> " + index + "</td>";
-          dynamicTR = dynamicTR + "<td class='txtName'  data-id=" + element.id + ">" + element.name + "</td>";
+          dynamicTR = dynamicTR + "<td class='txtName'  id=" + element.id + ">" + element.name + "</td>";
           dynamicTR = dynamicTR + "<td class='txtContact'>" + element.contact + "</td>";
           dynamicTR = dynamicTR + "<td class='txtAltNo'>" + element.altContact + "</td>";
           dynamicTR = dynamicTR + "<td class='txtAddress'>" + element.address + "</td>";
