@@ -316,7 +316,7 @@
           name: $("#txtName").val(),
           category: $("#txtCategory").val(),
           announced: $("#txtAnnounced").val(),
-          address: $("#txtRelease").val()
+          release: $("#txtRelease").val()
         };
         arryObj.push(obj);
         localStorage.setItem('localData', JSON.stringify(arryObj));
@@ -333,7 +333,7 @@
       oldRecord.name = $("#txtName").val();
       oldRecord.category = $("#txtCategory").val();
       oldRecord.announced = $("#txtAnnounced").val();
-      oldRecord.address = $("#txtRelease").val();
+      oldRecord.release = $("#txtRelease").val();
       localStorage.setItem('localData', JSON.stringify(localArray));
       loadDataFromLocal();
       clearForm();
