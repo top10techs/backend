@@ -76,6 +76,11 @@
         <label>Type</label>
         <input id="txtType" type="text" class="form-control txt txtType" minlength="10" maxlength="10"
           placeholder="Type">
+      </div> 
+<div class="col-md-3 col-sm-6 col-6">
+        <label>Size</label>
+        <input id="txtSize" type="text" class="form-control txt txtSize" minlength="10" maxlength="10"
+          placeholder="Size">
       </div>
 </div>
     <div class="row pt-2">
@@ -235,6 +240,7 @@
         $("#txtAnnounced").val(announced);
         $("#txtRelease").val(release);
   $("#txtType").val(type);
+$("#txtSize").val(size);
         $("#txtId").val(id);
         $("#btnSave").text("Update");
       });
@@ -267,6 +273,7 @@
       $("#txtAnnounced").val("");
       $("#txtRelease").val("");
  $("#txtType").val("");
+$("#txtSize").val("");
       $("#btnSave").text("Add");
     }
 
@@ -292,6 +299,7 @@
           dynamicTR = dynamicTR + "<td class='txtAnnounced'>" + element.announced + "</td>";
           dynamicTR = dynamicTR + "<td class='txtRelease'>" + element.release + "</td>";
  dynamicTR = dynamicTR + "<td class='txtType'>" + element.type + "</td>";
+ dynamicTR = dynamicTR + "<td class='txtSize'>" + element.size + "</td>";
           dynamicTR = dynamicTR + "    <td class='tdAction text-center'>";
           dynamicTR = dynamicTR + "        <button class='btn btn-sm btn-success btn-edit'> Edit</button>";
           dynamicTR = dynamicTR + "        <button class='btn btn-sm btn-danger btn-delete'> Delete</button>";
@@ -316,6 +324,7 @@
           announced: $("#txtAnnounced").val(),
           release: $("#txtRelease").val(),
 type: $("#txtType").val(),
+sizs: $("#txtSize").val(),
         };
         localArray.push(obj);
         localStorage.setItem('localData', JSON.stringify(localArray));
@@ -329,6 +338,7 @@ type: $("#txtType").val(),
           announced: $("#txtAnnounced").val(),
           release: $("#txtRelease").val(),
  type: $("#txtType").val(),
+ sizs: $("#txtSize").val(),
         };
         arryObj.push(obj);
         localStorage.setItem('localData', JSON.stringify(arryObj));
@@ -347,6 +357,7 @@ type: $("#txtType").val(),
       oldRecord.announced = $("#txtAnnounced").val();
       oldRecord.release = $("#txtRelease").val();
  oldRecord.type = $("#txtType").val();
+oldRecord.size = $("#txtSize").val();
       localStorage.setItem('localData', JSON.stringify(localArray));
       loadDataFromLocal();
       clearForm();
