@@ -66,13 +66,12 @@
           placeholder="Announced">
       </div>
     </div>
-    <div class="form-row">
-      <div class="col-md-6 col-sm-7">
-        <label>Address <span class="errdiv"> *</span></label>
-        <textarea id="txtAddress" class="form-control txt txtAddress" rows="3" minlength="15"
-          placeholder="Enter Address" required></textarea>
-      </div>
-    </div>
+ <div class="col-md-3 col-sm-6 col-6">
+   <div class="col-md-3 col-sm-6 col-6">
+        <label>Release date</label>
+        <input id="txtRelease" type="text" class="form-control txt txtRelease" minlength="10" maxlength="10"
+          placeholder="Released date">
+      </div></div>
     <div class="row pt-2">
       <div class="col-md-2">
         <button type="button" class="btn btn-success" id="btnSave">Save</button>
@@ -222,12 +221,12 @@
         const name = $(this).parent().parent().find(".txtName").html();
         const category = $(this).parent().parent().find(".txtCategory").html();
         const announced = $(this).parent().parent().find(".txtAnnounced").html();
-        const address = $(this).parent().parent().find(".txtAddress").html();
+        const release = $(this).parent().parent().find(".txtRelease").html();
         const id = $(this).parent().parent().find(".txtName").attr("data-id");
         $("#txtName").val(name);
         $("#txtCategory").val(category);
         $("#txtAnnounced").val(announced);
-        $("#txtAddress").val(address);
+        $("#txtRelease").val(release);
         $("#txtId").val(id);
         $("#btnSave").text("Update");
       });
@@ -258,7 +257,7 @@
       $("#txtName").val("");
       $("#txtCategory").val("");
       $("#txtAnnounced").val("");
-      $("#txtAddress").val("");
+      $("#txtRelease").val("");
       $("#btnSave").text("Add");
     }
 
@@ -282,7 +281,7 @@
           dynamicTR = dynamicTR + "<td class='txtName'  data-id=" + element.id + ">" + element.name + "</td>";
           dynamicTR = dynamicTR + "<td class='txtCategory'>" + element.category + "</td>";
           dynamicTR = dynamicTR + "<td class='txtAnnounced'>" + element.announced + "</td>";
-          dynamicTR = dynamicTR + "<td class='txtAddress'>" + element.address + "</td>";
+          dynamicTR = dynamicTR + "<td class='txtRelease'>" + element.release + "</td>";
           dynamicTR = dynamicTR + "    <td class='tdAction text-center'>";
           dynamicTR = dynamicTR + "        <button class='btn btn-sm btn-success btn-edit'> Edit</button>";
           dynamicTR = dynamicTR + "        <button class='btn btn-sm btn-danger btn-delete'> Delete</button>";
@@ -305,7 +304,7 @@
           name: $("#txtName").val(),
           category: $("#txtCategory").val(),
           announced: $("#txtAnnounced").val(),
-          address: $("#txtAddress").val()
+          address: $("#txtRelease").val()
         };
         localArray.push(obj);
         localStorage.setItem('localData', JSON.stringify(localArray));
@@ -317,7 +316,7 @@
           name: $("#txtName").val(),
           category: $("#txtCategory").val(),
           announced: $("#txtAnnounced").val(),
-          address: $("#txtAddress").val()
+          address: $("#txtRelease").val()
         };
         arryObj.push(obj);
         localStorage.setItem('localData', JSON.stringify(arryObj));
@@ -334,7 +333,7 @@
       oldRecord.name = $("#txtName").val();
       oldRecord.category = $("#txtCategory").val();
       oldRecord.announced = $("#txtAnnounced").val();
-      oldRecord.address = $("#txtAddress").val();
+      oldRecord.address = $("#txtRelease").val();
       localStorage.setItem('localData', JSON.stringify(localArray));
       loadDataFromLocal();
       clearForm();
