@@ -56,14 +56,14 @@
         <input id="txtId" type="hidden" class="form-control txt">
       </div>
       <div class="col-md-3 col-sm-6 col-6">
-        <label>Contact No <span class="errdiv"> *</span></label>
-        <input id="txtContact" data-type="number" type="text" minlength="10" maxlength="10"
-          class="form-control txt txtContact" placeholder="Contact No" required>
+        <label>Category<span class="errdiv"> *</span></label>
+        <input id="txtCategory" type="text" minlength="10" maxlength="10"
+          class="form-control txt txtCategory" placeholder="Category" required>
       </div>
       <div class="col-md-3 col-sm-6 col-6">
-        <label>Alt Contact No</label>
-        <input id="txtAltNo" type="text" class="form-control txt txtAltNo" minlength="10" maxlength="10"
-          placeholder="Alt Contact No">
+        <label>Announced</label>
+        <input id="txtAnnounced" type="text" class="form-control txt txtAnnounced" minlength="10" maxlength="10"
+          placeholder="Announced">
       </div>
     </div>
     <div class="form-row">
@@ -220,13 +220,13 @@
       $('#tblData').on('click', '.btn-edit', function () {
         debugger;
         const name = $(this).parent().parent().find(".txtName").html();
-        const contact = $(this).parent().parent().find(".txtContact").html();
-        const altContact = $(this).parent().parent().find(".txtAltNo").html();
+        const category = $(this).parent().parent().find(".txtCategory").html();
+        const announced = $(this).parent().parent().find(".txtAnnounced").html();
         const address = $(this).parent().parent().find(".txtAddress").html();
         const id = $(this).parent().parent().find(".txtName").attr("data-id");
         $("#txtName").val(name);
-        $("#txtContact").val(contact);
-        $("#txtAltNo").val(altContact);
+        $("#txtCategory").val(category);
+        $("#txtAnnounced").val(announced);
         $("#txtAddress").val(address);
         $("#txtId").val(id);
         $("#btnSave").text("Update");
@@ -256,8 +256,8 @@
     function clearForm() {
       debugger;
       $("#txtName").val("");
-      $("#txtContact").val("");
-      $("#txtAltNo").val("");
+      $("#txtCategory").val("");
+      $("#txtAnnounced").val("");
       $("#txtAddress").val("");
       $("#btnSave").text("Add");
     }
@@ -280,8 +280,8 @@
           let dynamicTR = "<tr>";
           dynamicTR = dynamicTR + "<td> " + index + "</td>";
           dynamicTR = dynamicTR + "<td class='txtName'  data-id=" + element.id + ">" + element.name + "</td>";
-          dynamicTR = dynamicTR + "<td class='txtContact'>" + element.contact + "</td>";
-          dynamicTR = dynamicTR + "<td class='txtAltNo'>" + element.altContact + "</td>";
+          dynamicTR = dynamicTR + "<td class='txtCategory'>" + element.category + "</td>";
+          dynamicTR = dynamicTR + "<td class='txtAnnounced'>" + element.announced + "</td>";
           dynamicTR = dynamicTR + "<td class='txtAddress'>" + element.address + "</td>";
           dynamicTR = dynamicTR + "    <td class='tdAction text-center'>";
           dynamicTR = dynamicTR + "        <button class='btn btn-sm btn-success btn-edit'> Edit</button>";
@@ -303,8 +303,8 @@
         const obj = {
           id: localArray.length + 1,
           name: $("#txtName").val(),
-          contact: $("#txtContact").val(),
-          altContact: $("#txtAltNo").val(),
+          category: $("#txtCategory").val(),
+          announced: $("#txtAnnounced").val(),
           address: $("#txtAddress").val()
         };
         localArray.push(obj);
@@ -315,8 +315,8 @@
         const obj = {
           id: 1,
           name: $("#txtName").val(),
-          contact: $("#txtContact").val(),
-          altContact: $("#txtAltNo").val(),
+          category: $("#txtCategory").val(),
+          announced: $("#txtAnnounced").val(),
           address: $("#txtAddress").val()
         };
         arryObj.push(obj);
@@ -332,8 +332,8 @@
       let localArray = JSON.parse(localData);
       const oldRecord = localArray.find(m => m.id == $("#txtId").val());
       oldRecord.name = $("#txtName").val();
-      oldRecord.contact = $("#txtContact").val();
-      oldRecord.altContact = $("#txtAltNo").val();
+      oldRecord.category = $("#txtCategory").val();
+      oldRecord.announced = $("#txtAnnounced").val();
       oldRecord.address = $("#txtAddress").val();
       localStorage.setItem('localData', JSON.stringify(localArray));
       loadDataFromLocal();
