@@ -42,6 +42,10 @@
       height: 20px;
     }
   </style>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
+<link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
 
 
 
@@ -272,7 +276,7 @@
 
 <script>
 //exporte les données sélectionnées
-var $table = $('#tblData');
+var $table = $('#');
     $(function () {
         $('#toolbar3').find('select').change(function () {
             $table.bootstrapTable('refreshOptions', {
@@ -283,9 +287,46 @@ var $table = $('#tblData');
 
 		var trBoldBlue3= $("table");
 
-	$(trBoldBlue3).on("click", obj, function (){
+	$(trBoldBlue3).on("click", , function (){
 			$(this).toggleClass("bold-blue");
 	});
+</script>
+<script>var oTable = $('#tblData').DataTable({
+		fixedHeader: {
+				header:false,
+				footer:false
+			},
+        pagingType: "full_numbers",
+        bSort: true,
+		"order": [[ 0, "asc" ]],
+		"lengthMenu": [[25, 50, 100, -1], [25, 50, 100, "All"]],
+        initComplete: function () {
+            this.api().columns().every( function () {
+                var column = this;
+                var select = $('<select style="width:100px;"><option value=""></option></select>')
+                    .appendTo( $(column.header()).find('span').empty() )
+                    .on({ 'change': function () {
+                        var val = $.fn.dataTable.util.escapeRegex(
+                            $(this).val()
+                        );
+ 
+                        column
+                            .search( val ? '^'+val+'$' : '', true, false )
+                            .draw();
+                    },
+                    'click': function(e) {
+                      // stop click event bubbling
+                      e.stopPropagation();
+                    }
+                    } );
+ 
+                column.data().unique().sort().each( function ( d, j ) {
+                    select.append( '<option value="'+d+'">'+d+'</option>' )
+                } );
+            } );
+        }
+	
+	 });
 </script>
 <p id="demo"></p><br><p id="demo2"></p>
 <script>var u =window.localStorage.getItem('localData') ;
