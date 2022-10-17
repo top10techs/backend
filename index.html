@@ -71,7 +71,13 @@
         <label>Release date</label>
         <input id="txtRelease" type="text" class="form-control txt txtRelease" minlength="10" maxlength="10"
           placeholder="Released date">
-      </div></div>
+      </div>
+ <div class="col-md-3 col-sm-6 col-6">
+        <label>Type</label>
+        <input id="txtType" type="text" class="form-control txt txtType" minlength="10" maxlength="10"
+          placeholder="Type">
+      </div>
+</div>
     <div class="row pt-2">
       <div class="col-md-2">
         <button type="button" class="btn btn-success" id="btnSave">Save</button>
@@ -222,11 +228,13 @@
         const category = $(this).parent().parent().find(".txtCategory").html();
         const announced = $(this).parent().parent().find(".txtAnnounced").html();
         const release = $(this).parent().parent().find(".txtRelease").html();
+ const type = $(this).parent().parent().find(".txtType").html();
         const id = $(this).parent().parent().find(".txtName").attr("data-id");
         $("#txtName").val(name);
         $("#txtCategory").val(category);
         $("#txtAnnounced").val(announced);
         $("#txtRelease").val(release);
+  $("#txtType").val(type);
         $("#txtId").val(id);
         $("#btnSave").text("Update");
       });
@@ -258,6 +266,7 @@
       $("#txtCategory").val("");
       $("#txtAnnounced").val("");
       $("#txtRelease").val("");
+ $("#txtType").val("");
       $("#btnSave").text("Add");
     }
 
@@ -282,6 +291,7 @@
           dynamicTR = dynamicTR + "<td class='txtCategory'>" + element.category + "</td>";
           dynamicTR = dynamicTR + "<td class='txtAnnounced'>" + element.announced + "</td>";
           dynamicTR = dynamicTR + "<td class='txtRelease'>" + element.release + "</td>";
+ dynamicTR = dynamicTR + "<td class='txtType'>" + element.type + "</td>";
           dynamicTR = dynamicTR + "    <td class='tdAction text-center'>";
           dynamicTR = dynamicTR + "        <button class='btn btn-sm btn-success btn-edit'> Edit</button>";
           dynamicTR = dynamicTR + "        <button class='btn btn-sm btn-danger btn-delete'> Delete</button>";
@@ -304,7 +314,8 @@
           name: $("#txtName").val(),
           category: $("#txtCategory").val(),
           announced: $("#txtAnnounced").val(),
-          release: $("#txtRelease").val()
+          release: $("#txtRelease").val(),
+type: $("#txtType").val(),
         };
         localArray.push(obj);
         localStorage.setItem('localData', JSON.stringify(localArray));
@@ -316,7 +327,8 @@
           name: $("#txtName").val(),
           category: $("#txtCategory").val(),
           announced: $("#txtAnnounced").val(),
-          release: $("#txtRelease").val()
+          release: $("#txtRelease").val(),
+ type: $("#txtType").val(),
         };
         arryObj.push(obj);
         localStorage.setItem('localData', JSON.stringify(arryObj));
@@ -334,6 +346,7 @@
       oldRecord.category = $("#txtCategory").val();
       oldRecord.announced = $("#txtAnnounced").val();
       oldRecord.release = $("#txtRelease").val();
+ oldRecord.type = $("#txtType").val();
       localStorage.setItem('localData', JSON.stringify(localArray));
       loadDataFromLocal();
       clearForm();
