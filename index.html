@@ -52,13 +52,13 @@
     <div class="form-row">
       <div class="col-md-3">
         <label>Name <span class="errdiv"> *</span></label>
-        <input id="txtName" type="text" class="form-control txt txtName" placeholder="Enter Name" required>
+        <input id="txtName" type="text" class="form-control txt txtName" placeholder="Enter Name">
         <input id="txtId" type="hidden" class="form-control txt">
       </div>
       <div class="col-md-3 col-sm-6 col-6">
         <label>Contact No <span class="errdiv"> *</span></label>
         <input id="txtContact" data-type="number" type="text" minlength="10" maxlength="10"
-          class="form-control txt txtContact" placeholder="Contact No" required>
+          class="form-control txt txtContact" placeholder="Contact No">
       </div>
       <div class="col-md-3 col-sm-6 col-6">
         <label>Alt Contact No</label>
@@ -70,7 +70,7 @@
       <div class="col-md-6 col-sm-7">
         <label>Address <span class="errdiv"> *</span></label>
         <textarea id="txtAddress" class="form-control txt txtAddress" rows="3" minlength="15"
-          placeholder="Enter Address" required></textarea>
+          placeholder="Enter Address"></textarea>
       </div>
     </div>
     <div class="row pt-2">
@@ -162,7 +162,7 @@
       debugger;
       let localData = localStorage.getItem('localData');
       if (localData) {
-        $("#tblData ").html("");
+        $("#tblData tbody").html("");
         let localArray = JSON.parse(localData);
         let index = 1;
         localArray.forEach(element => {
@@ -177,7 +177,7 @@
           dynamicTR = dynamicTR + "        <button class='btn btn-sm btn-danger btn-delete'> Delete</button>";
           dynamicTR = dynamicTR + "    </td>";
           dynamicTR = dynamicTR + " </tr>";
-          $("#tblData ").append(dynamicTR);
+          $("#tblData tbody").append(dynamicTR);
           index++;
         });
       }
