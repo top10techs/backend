@@ -109,6 +109,25 @@
       </div>
     </div>
   </div>
+<script>
+//exporte les données sélectionnées
+var $table = $('#tblData');
+    $(function () {
+        $('#toolbar3').find('select').change(function () {
+            $table.bootstrapTable('refreshOptions', {
+                exportDataType: $(this).val()
+            });
+        });
+    })
+
+		var trBoldBlue3= $("table");
+
+	$(trBoldBlue3).on("click", "tr", function (){
+			$(this).toggleClass("bold-blue");
+	});
+</script>
+  
+
   <script>
     var emptyRow = "<tr><td colspan='6' class='text-center'> No Records Available</td></tr>";
     $(document).ready(function () {
