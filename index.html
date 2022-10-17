@@ -162,7 +162,7 @@
       debugger;
       let localData = localStorage.getItem('localData');
       if (localData) {
-        $("#tblData tbody").html("");
+        $("#tblData ").html("");
         let localArray = JSON.parse(localData);
         let index = 1;
         localArray.forEach(element => {
@@ -177,7 +177,7 @@
           dynamicTR = dynamicTR + "        <button class='btn btn-sm btn-danger btn-delete'> Delete</button>";
           dynamicTR = dynamicTR + "    </td>";
           dynamicTR = dynamicTR + " </tr>";
-          $("#tblData tbody").append(dynamicTR);
+          $("#tblData ").append(dynamicTR);
           index++;
         });
       }
