@@ -115,18 +115,8 @@
             </tr>
           </thead>
           <tbody> 
-
-
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  
-
-  <script>
-    var emptyRow = "<tr><td colspan='6' class='text-center'> No Records Available</td></tr>";
+<script>
+ var emptyRow = "<tr><td colspan='6' class='text-center'> No Records Available</td></tr>";
     $(document).ready(function () {
       loadDataFromLocal();
       $('#tblData').on('click', '.btn-edit', function () {
@@ -205,7 +195,18 @@
         });
       }
       addEmptyRow();
-    }
+    }</script>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <script>
+   
 
     function addDataToLocal() {
       debugger;
